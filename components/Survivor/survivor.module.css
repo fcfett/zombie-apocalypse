@@ -1,0 +1,16 @@
+.survivor {
+  background: lime;
+}
+
+.infected {
+  background: red;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+}
+
+.button:is(:hover, :active) {
+  text-decoration: underline;
+}
