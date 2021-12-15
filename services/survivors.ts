@@ -1,6 +1,7 @@
 export type SurvivorProps = {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   age: number;
   attack: number;
   deffense: number;
@@ -13,7 +14,8 @@ export type SurvivorProps = {
 const survivorsMock: SurvivorProps[] = [
   {
     id: 1,
-    name: "Leon Kenedy",
+    firstName: "Leon",
+    lastName: "Kenedy",
     age: 31,
     imagePath: "/leon.png",
     attack: 4,
@@ -24,7 +26,8 @@ const survivorsMock: SurvivorProps[] = [
   },
   {
     id: 2,
-    name: "Jill Valentine",
+    firstName: "Jill",
+    lastName: "Valentine",
     age: 26,
     attack: 3,
     deffense: 4,
@@ -35,7 +38,8 @@ const survivorsMock: SurvivorProps[] = [
   },
   {
     id: 3,
-    name: "Joel Miller",
+    firstName: "Joel",
+    lastName: "Miller",
     age: 52,
     attack: 4.5,
     deffense: 4,
@@ -46,7 +50,8 @@ const survivorsMock: SurvivorProps[] = [
   },
   {
     id: 4,
-    name: "Ellie Williams",
+    firstName: "Ellie",
+    lastName: "Williams",
     age: 19,
     attack: 3,
     deffense: 3,
@@ -57,7 +62,8 @@ const survivorsMock: SurvivorProps[] = [
   },
   {
     id: 5,
-    name: "Michonne Hawthorne",
+    firstName: "Michonne",
+    lastName: "Hawthorne",
     age: 37,
     attack: 5,
     deffense: 3,

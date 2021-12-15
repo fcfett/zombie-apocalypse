@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import ROUTES from "../../routes";
 import { getSurvivor, getSurvivors } from "../../services";
 import type { SurvivorProps } from "../../services";
 
@@ -11,10 +10,9 @@ const SurvivorPage: NextPage<SurvivorPageProps> = ({ survivor }) => {
 
 export async function getStaticPaths() {
   const survivors = await getSurvivors();
-
-  const paths = survivors.map(
-    ({ id }: SurvivorProps) => `${ROUTES.SURVIVORS}/${id}`
-  );
+  const paths: StaticProps[] = survivors.map(({ id }) => ({
+    params: { id: `${id}` },
+  }));
 
   return {
     paths,
@@ -24,7 +22,7 @@ export async function getStaticPaths() {
 
 type StaticProps = {
   params: {
-    id: number;
+    id: string;
   };
 };
 

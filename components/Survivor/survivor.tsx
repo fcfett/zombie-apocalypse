@@ -8,13 +8,15 @@ import ROUTES from "../../routes";
 
 export default function Survivor({
   id,
-  name,
+  firstName,
+  lastName,
   imagePath,
   attack,
   deffense,
   agility,
   isInfected,
 }: SurvivorProps) {
+  const fullName = `${firstName} ${lastName}`;
   const survivorClasses = `${styles.survivor} ${
     isInfected ? styles.infected : ""
   }`;
@@ -23,11 +25,15 @@ export default function Survivor({
     <div className={survivorClasses}>
       <Image
         src={imagePath}
-        alt={`${name}'s profile picture`}
+        alt={`${fullName}'s profile picture`}
         width={160}
         height={220}
       />
-      <h2>{name}</h2>
+      <h2 className={styles["full-name"]}>
+        {firstName}
+        <br />
+        <strong>{lastName}</strong>
+      </h2>
       <ul>
         <li>ATK: {attack}</li>
         <li>DEF: {deffense}</li>

@@ -1,5 +1,13 @@
 :root {
-  --brand-highlight: #ff0;
+  --brand-highlight: #ffb101;
+  --spacing-sm: 8px;
+  --spacing-md: calc(var(--spacing-sm) * 2);
+  --spacing-lg: calc(var(--spacing-sm) * 3);
+  --spacing-xl: calc(var(--spacing-sm) * 4);
+  --spacing--sm: calc(var(--spacing-sm) * -1);
+  --spacing--md: calc(var(--spacing-md) * -1);
+  --spacing--lg: calc(var(--spacing-lg) * -1);
+  --spacing--xl: calc(var(--spacing-xl) * -1);
 }
 
 html,
@@ -25,7 +33,48 @@ main {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
-  padding: 16px;
+  padding: var(--spacing-md);
+  overflow: hidden;
+  background-image: url("/bg-texture.jpg");
+  background-blend-mode: luminosity;
+  background-blend-mode: overlay;
+  background-blend-mode: soft-light;
+}
+
+main:before,
+main:after {
+  content: "";
+  height: 120px;
+  width: 100vw;
+  display: block;
+  margin: var(--spacing--md);
+  background: ;
+  background-image: linear-gradient(
+      -180deg,
+      rgba(255, 255, 255, 0.25),
+      transparent 60%
+    ),
+    repeating-linear-gradient(
+      -55deg,
+      #000,
+      #000 75px,
+      var(--brand-highlight) 75px,
+      var(--brand-highlight) 150px
+    );
+}
+
+main:before {
+  top: 0;
+  box-shadow: 0 var(--spacing-sm) var(--spacing-xl) var(--spacing-sm)
+    rgba(0, 0, 0, 0.6);
+  transform: skew(0, -2deg) translatey(var(--spacing--lg));
+}
+
+main:after {
+  bottom: 0;
+  box-shadow: 0 var(--spacing-sm) var(--spacing-xl) var(--spacing-sm)
+    rgba(0, 0, 0, 0.6);
+  transform: skew(0, -2deg) translatey(var(--spacing-lg));
 }
 
 main > :first-child {

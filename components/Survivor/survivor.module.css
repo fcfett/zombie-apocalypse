@@ -14,3 +14,14 @@
 .button:is(:hover, :active) {
   text-decoration: underline;
 }
+
+.full-name {
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.full-name strong {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
