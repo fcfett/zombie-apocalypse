@@ -1,3 +1,7 @@
+:root {
+  --brand-highlight: #ff0;
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,21 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+main {
+  align-items: center;
+  background-color: var(--brand-highlight);
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+main > :first-child {
+  margin-top: auto;
+}
+
+main > :last-child {
+  margin-bottom: auto;
 }

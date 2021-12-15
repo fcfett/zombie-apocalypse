@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import ROUTES from "../../routes";
-import { getSurvivor, getSurvivors, SurvivorProps } from "../../services";
+import { getSurvivor, getSurvivors } from "../../services";
+import type { SurvivorProps } from "../../services";
 
 type SurvivorPageProps = { survivor: SurvivorProps };
 

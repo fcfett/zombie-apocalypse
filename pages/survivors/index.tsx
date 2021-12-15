@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
-import Survivor from "../../components/Survivor/survivor";
-import { getSurvivors, SurvivorProps } from "../../services";
+
+import SurvivorList from "../../components/SurvivorList/survivor-list";
+
+import { getSurvivors } from "../../services";
+import type { SurvivorProps } from "../../services";
 
 export async function getStaticProps() {
   const survivors = await getSurvivors();
@@ -13,15 +16,10 @@ type SurvivorsPageProps = { survivors: SurvivorProps[] };
 
 const SurvivorsPage: NextPage<SurvivorsPageProps> = ({ survivors }) => {
   return (
-    <>
-      {survivors ? (
-        survivors.map((survivorProps) => (
-          <Survivor key={survivorProps.id} {...survivorProps} />
-        ))
-      ) : (
-        <div>There are no survivors.</div>
-      )}
-    </>
+    <main>
+      <h1>Survivors List</h1>
+      <SurvivorList survivors={survivors} />
+    </main>
   );
 };
 

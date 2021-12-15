@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { SurvivorProps } from "../../services";
+import type { SurvivorProps } from "../../services";
 
 import styles from "./survivor.module.css";
 import ROUTES from "../../routes";
