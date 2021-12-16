@@ -1,5 +1,11 @@
 .survivor {
-  background: lime;
+  background: #4d481e;
+  padding: var(--spacing-md);
+  border-radius: var(--spacing-sm);
+}
+
+.survivor figure {
+  margin: 0;
 }
 
 .infected {

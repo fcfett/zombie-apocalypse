@@ -2,7 +2,7 @@ import React from "react";
 
 import Survivor from "../../components/Survivor/survivor";
 
-import { SurvivorProps } from "../../services";
+import type { SurvivorProps } from "../../services";
 
 import styles from "./survivor-list.module.css";
 
@@ -16,7 +16,7 @@ export default function SurvivorList({ survivors }: SurvivorListProps) {
       {survivors ? (
         <ul className={styles["survivor-list"]}>
           {survivors.map((survivorProps) => (
-            <li key={survivorProps.id}>
+            <li key={survivorProps.slug}>
               <Survivor {...survivorProps} />
             </li>
           ))}

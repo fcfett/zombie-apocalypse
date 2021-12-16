@@ -10,8 +10,8 @@ const SurvivorPage: NextPage<SurvivorPageProps> = ({ survivor }) => {
 
 export async function getStaticPaths() {
   const survivors = await getSurvivors();
-  const paths: StaticProps[] = survivors.map(({ id }) => ({
-    params: { id: `${id}` },
+  const paths: StaticProps[] = survivors.map(({ slug }) => ({
+    params: { slug },
   }));
 
   return {
@@ -22,12 +22,12 @@ export async function getStaticPaths() {
 
 type StaticProps = {
   params: {
-    id: string;
+    slug: string;
   };
 };
 
-export async function getStaticProps({ params: { id } }: StaticProps) {
-  const survivor = await getSurvivor(+id);
+export async function getStaticProps({ params: { slug } }: StaticProps) {
+  const survivor = await getSurvivor(slug);
 
   return {
     props: { survivor },

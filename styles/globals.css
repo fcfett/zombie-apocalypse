@@ -51,8 +51,9 @@ main:after {
   background: ;
   background-image: linear-gradient(
       -180deg,
-      rgba(255, 255, 255, 0.25),
-      transparent 60%
+      transparent,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 70%
     ),
     repeating-linear-gradient(
       -55deg,

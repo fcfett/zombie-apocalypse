@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import type { SurvivorProps } from "../../services";
 
@@ -7,7 +8,7 @@ import styles from "./survivor.module.css";
 import ROUTES from "../../routes";
 
 export default function Survivor({
-  id,
+  slug,
   firstName,
   lastName,
   imagePath,
@@ -23,12 +24,14 @@ export default function Survivor({
 
   return (
     <div className={survivorClasses}>
-      <Image
-        src={imagePath}
-        alt={`${fullName}'s profile picture`}
-        width={160}
-        height={220}
-      />
+      <figure>
+        <Image
+          src={imagePath}
+          alt={`${fullName}'s profile picture`}
+          width={160}
+          height={220}
+        />
+      </figure>
       <h2 className={styles["full-name"]}>
         {firstName}
         <br />
@@ -39,9 +42,10 @@ export default function Survivor({
         <li>DEF: {deffense}</li>
         <li>AGL: {agility}</li>
       </ul>
-      <a className={styles.button} href={`${ROUTES.SURVIVORS}/${id}`}>
-        View Profile
-      </a>
+
+      <Link href={`${ROUTES.SURVIVORS}/${slug}`} passHref>
+        <a className={styles.button}>View Profile</a>
+      </Link>
     </div>
   );
 }
