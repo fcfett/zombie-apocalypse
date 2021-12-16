@@ -11,7 +11,7 @@ export type SurvivorListProps = {
 };
 
 export default function SurvivorList({ survivors }: SurvivorListProps) {
-  return survivors ? (
+  return survivors.length ? (
     <ul className={styles["survivor-list"]}>
       {survivors.map((survivorProps) => (
         <li key={survivorProps.slug}>
@@ -20,6 +20,8 @@ export default function SurvivorList({ survivors }: SurvivorListProps) {
       ))}
     </ul>
   ) : (
-    <h1>There are no survivors.</h1>
+    <div>
+      <h1>No survivors found.</h1>
+    </div>
   );
 }

@@ -30,7 +30,7 @@
   box-sizing: border-box;
 }
 
-.button:is(:hover, :active) {
+.button:is(:hover, :active, :focus) {
   text-decoration: underline;
 }
 

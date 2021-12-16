@@ -86,3 +86,55 @@ export async function getSurvivor(
   );
   return survivor;
 }
+
+function setStorageItem(key: string, value: unknown) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function getStorageItem<T>(key: string): T {
+  const value = localStorage.getItem(key);
+  return value ? JSON.parse(value) : null;
+}
+
+const INFECTED_SURVIVORS_STORAGE_KEY = "infected-survivors";
+
+export function initInfectedStorage() {
+  if (!getInfectedSurvivors()) {
+    const infectedSurvivors = survivorsMock.reduce(
+      (arr: string[], { slug, isInfected }) => {
+        if (isInfected) {
+          arr.push(slug);
+        }
+        return arr;
+      },
+      []
+    );
+
+    setStorageItem(INFECTED_SURVIVORS_STORAGE_KEY, infectedSurvivors);
+  }
+}
+
+export function getInfectedSurvivors(): string[] {
+  const storedInfectedSurvivors = getStorageItem<string[]>(
+    INFECTED_SURVIVORS_STORAGE_KEY
+  );
+
+  return storedInfectedSurvivors ?? [];
+}
+
+export function toggleInfectedSurvivor(slug: string, toggle?: boolean) {
+  const infectedSurvivors = getInfectedSurvivors();
+  const survivorIndex = infectedSurvivors.indexOf(slug);
+  const shouldBeInfected = toggle ?? survivorIndex < 0;
+  const isInfected = survivorIndex > -1;
+
+  if (isInfected !== shouldBeInfected) {
+    if (shouldBeInfected) {
+      infectedSurvivors.push(slug);
+    } else {
+      infectedSurvivors.splice(survivorIndex, 1);
+    }
+  }
+
+  setStorageItem(INFECTED_SURVIVORS_STORAGE_KEY, infectedSurvivors);
+}

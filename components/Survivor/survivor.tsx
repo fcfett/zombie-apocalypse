@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { SurvivorProps } from "../../services";
+import { getInfectedSurvivors, SurvivorProps } from "../../services";
 
 import styles from "./survivor.module.css";
 import ROUTES from "../../routes";
@@ -18,9 +18,16 @@ export default function Survivor({
   agility,
   isInfected,
 }: SurvivorProps) {
+  const [isSurvivorInfected, setIsSurvivorInfected] = useState(isInfected);
+
+  useEffect(() => {
+    const isInfected = getInfectedSurvivors().includes(slug);
+    setIsSurvivorInfected(isInfected);
+  }, [slug]);
+
   const fullName = `${firstName} ${lastName}`;
   const survivorClasses = `${styles.survivor} ${
-    isInfected ? styles.infected : ""
+    isSurvivorInfected ? styles.infected : ""
   }`;
 
   return (
