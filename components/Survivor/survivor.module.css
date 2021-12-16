@@ -20,7 +20,9 @@
 }
 
 .survivor.infected {
-  background: red;
+  //background: #631608;
+  //background: #853535;
+  background: #6a3f3f;
 }
 
 .button {
