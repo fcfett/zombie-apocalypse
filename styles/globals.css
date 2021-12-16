@@ -4,10 +4,12 @@
   --spacing-md: calc(var(--spacing-sm) * 2);
   --spacing-lg: calc(var(--spacing-sm) * 3);
   --spacing-xl: calc(var(--spacing-sm) * 4);
+  --spacing-2xl: calc(var(--spacing-sm) * 5);
   --spacing--sm: calc(var(--spacing-sm) * -1);
   --spacing--md: calc(var(--spacing-md) * -1);
   --spacing--lg: calc(var(--spacing-lg) * -1);
   --spacing--xl: calc(var(--spacing-xl) * -1);
+  --spacing--2xl: calc(var(--spacing-2xl) * -1);
 }
 
 html,

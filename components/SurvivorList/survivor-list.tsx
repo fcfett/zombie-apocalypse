@@ -11,19 +11,15 @@ export type SurvivorListProps = {
 };
 
 export default function SurvivorList({ survivors }: SurvivorListProps) {
-  return (
-    <>
-      {survivors ? (
-        <ul className={styles["survivor-list"]}>
-          {survivors.map((survivorProps) => (
-            <li key={survivorProps.slug}>
-              <Survivor {...survivorProps} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <h1>There are no survivors.</h1>
-      )}
-    </>
+  return survivors ? (
+    <ul className={styles["survivor-list"]}>
+      {survivors.map((survivorProps) => (
+        <li key={survivorProps.slug}>
+          <Survivor {...survivorProps} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <h1>There are no survivors.</h1>
   );
 }

@@ -1,20 +1,33 @@
 .survivor {
-  background: #4d481e;
+  //background: #a4895c;
+  //background: #736246;
+  //background: #252b1f;
+  //background: #5b533f;
+  //background: #3f3b2e;
+  background: #96794e;
+
   padding: var(--spacing-md);
   border-radius: var(--spacing-sm);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-sm);
+  box-shadow: 0 var(--spacing-sm) var(--spacing-xl) var(--spacing--sm)
+    rgba(0, 0, 0, 0.6);
 }
 
 .survivor figure {
-  margin: 0;
+  margin: var(--spacing--2xl) 0 0;
 }
 
-.infected {
+.survivor.infected {
   background: red;
 }
 
 .button {
   background-color: #000;
   color: #fff;
+  padding: var(--spacing-sm);
+  box-sizing: border-box;
 }
 
 .button:is(:hover, :active) {
@@ -25,6 +38,7 @@
   font-weight: normal;
   font-size: 1rem;
   line-height: 1rem;
+  margin: 0;
 }
 
 .full-name strong {

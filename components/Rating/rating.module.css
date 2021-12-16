@@ -1,0 +1,18 @@
+.rating {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2px;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    #fff,
+    #fff var(--rate),
+    transparent var(--rate)
+  );
+}
+
+.rating > li img {
+  object-fit: contain;
+}

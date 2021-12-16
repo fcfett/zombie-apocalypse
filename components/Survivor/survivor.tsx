@@ -6,6 +6,7 @@ import type { SurvivorProps } from "../../services";
 
 import styles from "./survivor.module.css";
 import ROUTES from "../../routes";
+import SkillList from "../SkillList/skill-list";
 
 export default function Survivor({
   slug,
@@ -37,12 +38,7 @@ export default function Survivor({
         <br />
         <strong>{lastName}</strong>
       </h2>
-      <ul>
-        <li>ATK: {attack}</li>
-        <li>DEF: {deffense}</li>
-        <li>AGL: {agility}</li>
-      </ul>
-
+      <SkillList skills={[attack, deffense, agility]} />
       <Link href={`${ROUTES.SURVIVORS}/${slug}`} passHref>
         <a className={styles.button}>View Profile</a>
       </Link>
