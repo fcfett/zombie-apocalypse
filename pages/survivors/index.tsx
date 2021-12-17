@@ -50,7 +50,11 @@ const SurvivorsPage: NextPage<SurvivorsPageProps> = ({ survivors }) => {
       <header style={{ display: "flex", alignItems: "center", gap: "24px" }}>
         <h1>Survivors List</h1>
         <form>
-          <input type="text" onChange={handleFilter} />
+          <input
+            type="text"
+            placeholder="Filter Survivors"
+            onChange={handleFilter}
+          />
           <input
             type="checkbox"
             name="is-infected"
