@@ -1,0 +1,95 @@
+.toggle {
+  //padding: 8px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.toggle-input {
+  position: absolute;
+}
+
+.label {
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(180deg, #ff6660, #631608);
+  border-radius: 50%;
+  position: relative;
+  font-size: 9rem;
+  line-height: 0.65em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.label:before,
+.label:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 6px;
+  border-radius: 50%;
+}
+
+.label,
+.label:before,
+.label:after {
+  transition: 0.25s ease-out;
+  transition-property: background, text-shadow, box-shadow, color;
+}
+
+.label:before {
+  content: "☣";
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #d8401f, #8d2410);
+}
+
+.input {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.input:checked + label {
+  background: linear-gradient(180deg, red, #8d2410);
+  box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 4px #fff;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.input:checked + label:before {
+  background: linear-gradient(180deg, red);
+  box-shadow: 0 0 4px red, 0 0 32px 8px red;
+}
+
+.toggle:focus-within > label {
+  //box-shadow: 0 0 0 4px red;
+}
+
+.svg {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.toggle:before {
+  position: absolute;
+  //display: block;
+  //top: 0;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
+  width: 100%;
+  height: 100%;
+
+  //border-radius: 50%;
+  content: "";
+  background: lime;
+}

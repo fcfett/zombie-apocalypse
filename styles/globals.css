@@ -73,14 +73,14 @@ main:before {
   top: 0;
   box-shadow: 0 var(--spacing-sm) var(--spacing-xl) var(--spacing-sm)
     rgba(0, 0, 0, 0.6);
-  transform: skew(0, -2deg) translatey(var(--spacing--lg));
+  transform: skewy(-2deg) translatey(var(--spacing--lg));
 }
 
 main:after {
   bottom: 0;
   box-shadow: 0 var(--spacing-sm) var(--spacing-xl) var(--spacing-sm)
     rgba(0, 0, 0, 0.6);
-  transform: skew(0, -2deg) translatey(var(--spacing-lg));
+  transform: skewy(-2deg) translatey(var(--spacing-lg));
 }
 
 main > :first-child {

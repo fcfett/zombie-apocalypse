@@ -5,6 +5,7 @@ import { SurvivorList } from "../../components/SurvivorList";
 
 import { getInfectedSurvivors, getSurvivors } from "../../services";
 import type { SurvivorProps } from "../../services";
+import { Toggle } from "../../components/Toggle";
 
 export async function getStaticProps() {
   const survivors = await getSurvivors();
@@ -62,6 +63,7 @@ const SurvivorsPage: NextPage<SurvivorsPageProps> = ({ survivors }) => {
             onChange={handleInfectedToggle}
           />
           <label htmlFor="is-infected">Infected</label>
+          <Toggle />
         </form>
       </header>
       <SurvivorList
