@@ -1,0 +1,12 @@
+.button {
+  background-color: #000;
+  color: #fff;
+  padding: var(--spacing-sm);
+  box-sizing: border-box;
+  align-self: flex-end;
+  z-index: 1;
+}
+
+.button:is(:hover, :active, :focus) {
+  text-decoration: underline;
+}

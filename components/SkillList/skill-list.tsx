@@ -1,5 +1,5 @@
 import React from "react";
-import Rating from "../Rating/rating";
+import { Rating } from "../Rating";
 
 import styles from "./skill-list.module.css";
 
@@ -7,7 +7,7 @@ export type SkillListProps = {
   skills: number[];
 };
 
-export default function SkillList({ skills: [atk, def, agl] }: SkillListProps) {
+export function SkillList({ skills: [atk, def, agl] }: SkillListProps) {
   return (
     <ul className={styles["skill-list"]}>
       <li title={`ATK: ${atk}`}>

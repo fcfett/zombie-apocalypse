@@ -9,7 +9,7 @@ export type RatingProps = {
 
 const RATE_BASE = 5;
 
-export default function Rating({ rate }: RatingProps) {
+export function Rating({ rate }: RatingProps) {
   const ratePercentage = (rate * 100) / RATE_BASE;
   const internalStyle = { "--rate": `${ratePercentage}%` } as CSSProperties;
 

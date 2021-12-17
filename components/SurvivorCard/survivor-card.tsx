@@ -6,9 +6,9 @@ import { getInfectedSurvivors, SurvivorProps } from "../../services";
 
 import styles from "./survivor-card.module.css";
 import ROUTES from "../../routes";
-import SkillList from "../SkillList/skill-list";
+import { SkillList } from "../SkillList";
 
-export default function SurvivorCard({
+export function SurvivorCard({
   slug,
   firstName,
   lastName,

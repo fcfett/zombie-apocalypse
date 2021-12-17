@@ -1,0 +1,91 @@
+.survivor-detail {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  flex: 1;
+  z-index: 0;
+}
+
+.survivor-detail.infected:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: var(--spacing--2xl) var(--spacing--md) 0;
+  transform: translatey(var(--spacing--2xl));
+  background-image: url("/blood.png");
+  background-size: contain;
+  background-repeat: repeat no-repeat;
+  z-index: -1;
+}
+
+.survivor-detail > aside {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.survivor-detail > section {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.survivor-detail > section > * {
+  background: #000;
+  box-shadow: 0 0 0 var(--spacing-xs) #000;
+  color: #fff;
+}
+
+.survivor-detail > section > :nth-child(n) {
+  transform: rotate(-1deg);
+}
+
+.survivor-detail > section > :nth-child(2n) {
+  transform: rotate(1deg);
+}
+
+.survivor-detail > section > :nth-child(3n) {
+  transform: rotate(-2deg);
+}
+
+.survivor-detail figure {
+  position: relative;
+  margin: 0;
+  transform: translatey(var(--spacing-2xl));
+}
+
+.full-name {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.full-name strong {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.bio {
+  margin: 0;
+
+  font-size: 1.2rem;
+}
+
+@media (max-width: 968px) {
+  .survivor-detail {
+    flex-flow: column nowrap;
+  }
+
+  .survivor-detail > aside {
+    order: 1;
+  }
+}

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-sm);

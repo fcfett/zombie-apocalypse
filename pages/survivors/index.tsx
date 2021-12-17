@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 
-import SurvivorList from "../../components/SurvivorList/survivor-list";
+import { SurvivorList } from "../../components/SurvivorList";
 
 import { getInfectedSurvivors, getSurvivors } from "../../services";
 import type { SurvivorProps } from "../../services";
