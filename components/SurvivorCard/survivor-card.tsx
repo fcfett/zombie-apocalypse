@@ -26,7 +26,7 @@ export default function SurvivorCard({
   }, [slug]);
 
   const fullName = `${firstName} ${lastName}`;
-  const survivorClasses = `${styles.survivor} ${
+  const survivorClasses = `${styles["survivor-card"]} ${
     isSurvivorInfected ? styles.infected : ""
   }`;
 
