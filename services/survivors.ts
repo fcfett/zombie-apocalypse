@@ -99,19 +99,18 @@ function getStorageItem<T>(key: string): T {
 const INFECTED_SURVIVORS_STORAGE_KEY = "infected-survivors";
 
 export function initInfectedStorage() {
-  if (!getInfectedSurvivors()) {
-    const infectedSurvivors = survivorsMock.reduce(
-      (arr: string[], { slug, isInfected }) => {
-        if (isInfected) {
-          arr.push(slug);
-        }
-        return arr;
-      },
-      []
-    );
+  const infectedSurvivors = survivorsMock.reduce(
+    (arr: string[], { slug, isInfected }) => {
+      if (isInfected) {
+        arr.push(slug);
+      }
+      return arr;
+    },
+    []
+  );
 
-    setStorageItem(INFECTED_SURVIVORS_STORAGE_KEY, infectedSurvivors);
-  }
+  setStorageItem(INFECTED_SURVIVORS_STORAGE_KEY, infectedSurvivors);
+  return infectedSurvivors;
 }
 
 export function getInfectedSurvivors(): string[] {
@@ -119,7 +118,7 @@ export function getInfectedSurvivors(): string[] {
     INFECTED_SURVIVORS_STORAGE_KEY
   );
 
-  return storedInfectedSurvivors ?? [];
+  return storedInfectedSurvivors ?? initInfectedStorage();
 }
 
 export function toggleInfectedSurvivor(slug: string, toggle?: boolean) {
