@@ -1,6 +1,6 @@
 import React from "react";
 
-import Survivor from "../../components/Survivor/survivor";
+import SurvivorCard from "../SurvivorCard/survivor-card";
 
 import type { SurvivorProps } from "../../services";
 
@@ -15,7 +15,7 @@ export default function SurvivorList({ survivors }: SurvivorListProps) {
     <ul className={styles["survivor-list"]}>
       {survivors.map((survivorProps) => (
         <li key={survivorProps.slug}>
-          <Survivor {...survivorProps} />
+          <SurvivorCard {...survivorProps} />
         </li>
       ))}
     </ul>

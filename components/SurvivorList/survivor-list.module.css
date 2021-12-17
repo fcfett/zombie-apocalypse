@@ -14,3 +14,15 @@
   max-width: 100%;
   width: 200px;
 }
+
+.survivor-list > li:nth-child(n) {
+  transform: rotate(-2deg);
+}
+
+.survivor-list > li:nth-child(2n) {
+  transform: rotate(1deg);
+}
+
+.survivor-list > li:nth-child(3n) {
+  transform: rotate(-2deg);
+}

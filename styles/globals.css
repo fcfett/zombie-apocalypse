@@ -1,10 +1,12 @@
 :root {
   --brand-highlight: #ffb101;
-  --spacing-sm: 8px;
+  --spacing-xs: 4px;
+  --spacing-sm: calc(var(--spacing-xs) * 2);
   --spacing-md: calc(var(--spacing-sm) * 2);
   --spacing-lg: calc(var(--spacing-sm) * 3);
   --spacing-xl: calc(var(--spacing-sm) * 4);
   --spacing-2xl: calc(var(--spacing-sm) * 5);
+  --spacing--xs: calc(var(--spacing-xs) * -1);
   --spacing--sm: calc(var(--spacing-sm) * -1);
   --spacing--md: calc(var(--spacing-md) * -1);
   --spacing--lg: calc(var(--spacing-lg) * -1);

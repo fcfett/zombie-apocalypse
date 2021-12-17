@@ -4,11 +4,11 @@ import Link from "next/link";
 
 import { getInfectedSurvivors, SurvivorProps } from "../../services";
 
-import styles from "./survivor.module.css";
+import styles from "./survivor-card.module.css";
 import ROUTES from "../../routes";
 import SkillList from "../SkillList/skill-list";
 
-export default function Survivor({
+export default function SurvivorCard({
   slug,
   firstName,
   lastName,
