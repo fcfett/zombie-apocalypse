@@ -10,6 +10,7 @@ import {
 } from "../../services";
 
 import styles from "./survivor-detail.module.css";
+import { Toggle } from "../Toggle";
 
 export function SurvivorDetail({
   slug,
@@ -64,16 +65,11 @@ export function SurvivorDetail({
         <p className={styles.bio}>{bio}</p>
         <SkillList skills={[attack, deffense, agility]} />
         {isLoaded ? (
-          <form>
-            <input
-              type="checkbox"
-              name="is-infected"
-              id="is-infected"
-              onChange={handleIsInfected}
-              defaultChecked={isSurvivorInfected}
-            />
-            <label htmlFor="is-infected">Is infected</label>
-          </form>
+          <Toggle
+            onChange={handleIsInfected}
+            text="• Toggle Infected • Toggle Infected • Toggle Infected"
+            textSpacing={0.5}
+          />
         ) : null}
       </section>
     </div>

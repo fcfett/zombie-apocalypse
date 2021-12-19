@@ -1,9 +1,20 @@
 import { ChangeEventHandler } from "react";
 import styles from "./toggle.module.css";
 
-type Props = { onChange: ChangeEventHandler };
+type Props = {
+  onChange: ChangeEventHandler;
+  text?: string;
+  textSpacing?: number;
+};
 
-export function Toggle({ onChange }: Props) {
+const DEFAULT_TEXT = "• Toggle Infected Survivors • Toggle Infected Survivors";
+const DEFAULT_TEXT_SPACING = 0;
+
+export function Toggle({
+  onChange,
+  text = DEFAULT_TEXT,
+  textSpacing = DEFAULT_TEXT_SPACING,
+}: Props) {
   return (
     <div className={styles.toggle}>
       <svg className={styles.svg} viewBox="0 0 200 200" fontSize={18.5}>
@@ -15,10 +26,14 @@ export function Toggle({ onChange }: Props) {
         <text width={800} fill="white" dy={2}>
           <textPath
             alignmentBaseline="before-edge"
-            style={{ textTransform: "uppercase", fontWeight: 600 }}
+            letterSpacing={textSpacing}
+            style={{
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
             xlinkHref="#circle"
           >
-            • Toggle Infected Survivors • Toggle Infected Survivors
+            {text}
           </textPath>
         </text>
       </svg>
