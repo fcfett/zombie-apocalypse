@@ -50,20 +50,13 @@ const SurvivorsPage: NextPage<SurvivorsPageProps> = ({ survivors }) => {
     <main>
       <header style={{ display: "flex", alignItems: "center", gap: "24px" }}>
         <h1>Survivors List</h1>
-        <form>
+        <form style={{ display: "flex", alignItems: "center" }}>
           <input
             type="text"
             placeholder="Filter Survivors"
             onChange={handleFilter}
           />
-          <input
-            type="checkbox"
-            name="is-infected"
-            id="is-infected"
-            onChange={handleInfectedToggle}
-          />
-          <label htmlFor="is-infected">Infected</label>
-          <Toggle />
+          <Toggle onChange={handleInfectedToggle} />
         </form>
       </header>
       <SurvivorList

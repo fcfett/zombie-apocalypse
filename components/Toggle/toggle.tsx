@@ -1,6 +1,9 @@
+import { ChangeEventHandler } from "react";
 import styles from "./toggle.module.css";
 
-export function Toggle() {
+type Props = { onChange: ChangeEventHandler };
+
+export function Toggle({ onChange }: Props) {
   return (
     <div className={styles.toggle}>
       <svg className={styles.svg} viewBox="0 0 200 200" fontSize={18.5}>
@@ -20,7 +23,12 @@ export function Toggle() {
         </text>
       </svg>
       <div className={styles["toggle-input"]}>
-        <input className={styles.input} type="checkbox" id="toggle" />
+        <input
+          className={styles.input}
+          type="checkbox"
+          id="toggle"
+          onChange={onChange}
+        />
         <label
           className={styles.label}
           htmlFor="toggle"
