@@ -6,18 +6,17 @@ type Props = {
   onChange: ChangeEventHandler;
   text?: string;
   textSpacing?: number;
-  defaultChecked: boolean;
+  defaultChecked?: boolean;
 };
 
 const DEFAULT_TEXT = "• Toggle Infected Survivors • Toggle Infected Survivors";
 const DEFAULT_TEXT_SPACING = 0;
-const DEFAULT_CHECKED = false;
 
 export function Toggle({
   onChange,
+  defaultChecked,
   text = DEFAULT_TEXT,
   textSpacing = DEFAULT_TEXT_SPACING,
-  defaultChecked = DEFAULT_CHECKED,
 }: Props) {
   return (
     <div className={styles.toggle}>
