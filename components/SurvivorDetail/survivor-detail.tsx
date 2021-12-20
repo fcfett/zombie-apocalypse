@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { SkillList } from "../SkillList";
@@ -66,9 +66,10 @@ export function SurvivorDetail({
         <SkillList skills={[attack, deffense, agility]} />
         {isLoaded ? (
           <Toggle
-            onChange={handleIsInfected}
-            text="• Toggle Infected • Toggle Infected • Toggle Infected"
             textSpacing={0.5}
+            onChange={handleIsInfected}
+            defaultChecked={isSurvivorInfected}
+            text="• Toggle Infected • Toggle Infected • Toggle Infected"
           />
         ) : null}
       </section>

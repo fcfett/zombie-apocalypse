@@ -1,5 +1,3 @@
-import React from "react";
-
 import { SurvivorCard } from "../SurvivorCard";
 
 import type { SurvivorProps } from "../../services";

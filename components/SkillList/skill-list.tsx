@@ -1,4 +1,3 @@
-import React from "react";
 import { Rating } from "../Rating";
 
 import styles from "./skill-list.module.css";

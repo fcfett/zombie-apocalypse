@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 import Image from "next/image";
 
 import styles from "./rating.module.css";

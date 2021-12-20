@@ -1,19 +1,23 @@
 import { ChangeEventHandler } from "react";
+
 import styles from "./toggle.module.css";
 
 type Props = {
   onChange: ChangeEventHandler;
   text?: string;
   textSpacing?: number;
+  defaultChecked: boolean;
 };
 
 const DEFAULT_TEXT = "• Toggle Infected Survivors • Toggle Infected Survivors";
 const DEFAULT_TEXT_SPACING = 0;
+const DEFAULT_CHECKED = false;
 
 export function Toggle({
   onChange,
   text = DEFAULT_TEXT,
   textSpacing = DEFAULT_TEXT_SPACING,
+  defaultChecked = DEFAULT_CHECKED,
 }: Props) {
   return (
     <div className={styles.toggle}>
@@ -43,11 +47,12 @@ export function Toggle({
           type="checkbox"
           id="toggle"
           onChange={onChange}
+          defaultChecked={defaultChecked}
         />
         <label
-          className={styles.label}
           htmlFor="toggle"
           title="Toggle Infected"
+          className={styles.label}
         />
       </div>
     </div>
