@@ -60,6 +60,7 @@
   position: relative;
   margin: 0;
   transform: translatey(var(--spacing-2xl));
+  filter: drop-shadow(-10px -5px 20px rgba(0, 0, 0, 0.75));
 }
 
 .full-name {

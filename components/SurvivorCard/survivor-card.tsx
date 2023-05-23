@@ -18,7 +18,7 @@ export function SurvivorCard({
   agility,
   isInfected,
 }: SurvivorProps) {
-  const [isSurvivorInfected, setIsSurvivorInfected] = useState(isInfected);
+  const [isSurvivorInfected, setIsSurvivorInfected] = useState<boolean>(isInfected);
 
   useEffect(() => {
     const isInfected = getInfectedSurvivors().includes(slug);
@@ -30,7 +30,7 @@ export function SurvivorCard({
     isSurvivorInfected ? styles.infected : ""
   }`;
 
-  return (
+  return isSurvivorInfected !== undefined && (
     <div className={survivorClasses}>
       <figure>
         <Image
@@ -39,6 +39,7 @@ export function SurvivorCard({
           width={160}
           height={220}
         />
+        {isSurvivorInfected && <span className={styles['infected-badge']}>Infected</span>}
       </figure>
       <h2 className={styles["full-name"]}>
         {firstName}

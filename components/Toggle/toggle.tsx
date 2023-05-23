@@ -1,4 +1,5 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, HTMLAttributes } from "react";
+import classNames from 'classnames'
 
 import styles from "./toggle.module.css";
 
@@ -7,7 +8,7 @@ type Props = {
   text?: string;
   textSpacing?: number;
   defaultChecked?: boolean;
-};
+} & HTMLAttributes<HTMLDivElement>
 
 const DEFAULT_TEXT = "• Toggle Infected Survivors • Toggle Infected Survivors";
 const DEFAULT_TEXT_SPACING = 0;
@@ -17,9 +18,10 @@ export function Toggle({
   defaultChecked,
   text = DEFAULT_TEXT,
   textSpacing = DEFAULT_TEXT_SPACING,
+  style,
 }: Props) {
   return (
-    <div className={styles.toggle}>
+    <div className={classNames(styles.toggle)} style={style}>
       <svg className={styles.svg} viewBox="0 0 200 200" fontSize={18.5}>
         <path
           id="circle"

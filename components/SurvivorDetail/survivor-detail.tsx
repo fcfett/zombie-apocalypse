@@ -66,10 +66,10 @@ export function SurvivorDetail({
         <SkillList skills={[attack, deffense, agility]} />
         {isLoaded ? (
           <Toggle
-            textSpacing={0.5}
+            textSpacing={0}
             onChange={handleIsInfected}
             defaultChecked={isSurvivorInfected}
-            text="• Toggle Infected • Toggle Infected • Toggle Infected"
+            text="• Toggle Infection • Toggle Infection • Toggle Infection"
           />
         ) : null}
       </section>

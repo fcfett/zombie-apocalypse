@@ -5,6 +5,7 @@
   box-sizing: border-box;
   align-self: flex-end;
   z-index: 1;
+  transform: rotate(-3deg);
 }
 
 .button:is(:hover, :active, :focus) {

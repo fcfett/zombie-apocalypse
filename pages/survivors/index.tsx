@@ -5,6 +5,7 @@ import { SurvivorList } from "../../components/SurvivorList";
 
 import { getInfectedSurvivors, getSurvivors } from "../../services";
 import type { SurvivorProps } from "../../services";
+import { InputText } from "../../components/InputText";
 import { Toggle } from "../../components/Toggle";
 
 export async function getStaticProps() {
@@ -48,17 +49,20 @@ const SurvivorsPage: NextPage<SurvivorsPageProps> = ({ survivors }) => {
 
   return (
     <main>
-      <header style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-        <h1>Survivors List</h1>
+      <header style={{ display: "flex", flexFlow: "column nowrap", alignItems: "center", gap: '0.5rem', marginBottom: '2rem' }}>
+        <h1 style={{ margin: '4rem 0 0' }}>Survivors List</h1>
         <form style={{ display: "flex", alignItems: "center" }}>
-          <input
-            type="text"
-            placeholder="Filter Survivors"
+          <InputText
+            placeholder="Filter Survivors..."
             onChange={handleFilter}
           />
-          <Toggle onChange={handleInfectedToggle} />
         </form>
       </header>
+      <Toggle style={{
+        zIndex: 10,
+        right: '1rem',
+        position: 'absolute',
+      }} onChange={handleInfectedToggle} />
       <SurvivorList
         survivors={
           hasInfectedFilter
