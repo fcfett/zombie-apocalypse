@@ -7,7 +7,7 @@
   z-index: 0;
 }
 
-.survivor-detail.infected:before {
+.survivor-detail:before {
   content: "";
   position: absolute;
   left: 0;
@@ -15,11 +15,18 @@
   right: 0;
   bottom: 0;
   margin: var(--spacing--2xl) var(--spacing--md) 0;
-  transform: translatey(var(--spacing--2xl));
+  transform: translateY(-50%);
   background-image: url("/blood.png");
   background-size: contain;
   background-repeat: repeat no-repeat;
   z-index: -1;
+  transition: opacity 250ms linear 150ms, transform 450ms ease-in-out;
+  opacity: 0;
+}
+
+.survivor-detail.infected:before {
+  transform: translateY(var(--spacing--2xl));
+  opacity: 1;
 }
 
 .survivor-detail > aside {
@@ -89,4 +96,31 @@
   .survivor-detail > aside {
     order: 1;
   }
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -10;
+  backdrop-filter: grayscale(1);
+  transition: all 450ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.survivor-detail.infected .backdrop {
+  opacity: 1;
+}
+
+.infected-indicator {
+  opacity: 0;
+  font-size: var(--spacing-2xl) !important;
+  transition: opacity 250ms ease-in-out;
+}
+
+.survivor-detail.infected .infected-indicator {
+  opacity: 1;
 }

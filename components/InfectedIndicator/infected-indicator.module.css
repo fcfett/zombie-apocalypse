@@ -1,0 +1,13 @@
+.infected-indicator {
+  color: #d97979;
+  text-shadow: 2px 3px #000;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  z-index: 10;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: var(--spacing-xl);
+  transform: translate(-50%, -50%) rotate(-6deg);
+  mix-blend-mode: hard-light;
+}

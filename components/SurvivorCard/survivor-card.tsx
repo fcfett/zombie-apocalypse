@@ -7,6 +7,7 @@ import { getInfectedSurvivors, SurvivorProps } from "../../services";
 import styles from "./survivor-card.module.css";
 import ROUTES from "../../routes";
 import { SkillList } from "../SkillList";
+import { InfectedIndicator } from "../InfectedIndicator";
 
 export function SurvivorCard({
   slug,
@@ -39,7 +40,7 @@ export function SurvivorCard({
           width={160}
           height={220}
         />
-        {isSurvivorInfected && <span className={styles['infected-badge']}>Infected</span>}
+        {isSurvivorInfected && <InfectedIndicator />}
       </figure>
       <h2 className={styles["full-name"]}>
         {firstName}

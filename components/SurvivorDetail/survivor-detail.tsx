@@ -11,6 +11,7 @@ import {
 
 import styles from "./survivor-detail.module.css";
 import { Toggle } from "../Toggle";
+import { InfectedIndicator } from "../InfectedIndicator";
 
 export function SurvivorDetail({
   slug,
@@ -45,7 +46,8 @@ export function SurvivorDetail({
   }`;
 
   return (
-    <div className={survivorClasses}>
+    <div className={`${survivorClasses}`}>
+      <div className={styles.backdrop} />
       <aside>
         <figure>
           <Image
@@ -54,6 +56,7 @@ export function SurvivorDetail({
             width={320}
             height={440}
           />
+          <InfectedIndicator className={styles['infected-indicator']} />
         </figure>
       </aside>
       <section>
