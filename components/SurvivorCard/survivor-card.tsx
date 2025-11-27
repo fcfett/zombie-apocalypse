@@ -31,7 +31,7 @@ export function SurvivorCard({
     isSurvivorInfected ? styles.infected : ""
   }`;
 
-  return isSurvivorInfected !== undefined && (
+  return isSurvivorInfected !== undefined ? (
     <div className={survivorClasses}>
       <figure>
         <Image
@@ -52,5 +52,5 @@ export function SurvivorCard({
         <a className={styles.button}>View Profile</a>
       </Link>
     </div>
-  );
+  ) : null;
 }

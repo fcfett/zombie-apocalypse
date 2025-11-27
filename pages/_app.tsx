@@ -3,7 +3,8 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const NextComponent = Component as any;
+  return <NextComponent {...pageProps} />;
 }
 
 export default MyApp;
